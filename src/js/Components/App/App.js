@@ -8,10 +8,8 @@ export default class App extends Component {
 
 	render() {
 		const t1 = document.createElement('div');
-		new Temperature(t1)
-		const t2 = document.createElement('div');
-		new Temperature(t2);
+		new Temperature(t1);
 		
-		return ['String', t1, t2]
+		return ['String', t1, { tag: Temperature, props: { temperature: 7, unit: "C", }}]
 	} 
 }

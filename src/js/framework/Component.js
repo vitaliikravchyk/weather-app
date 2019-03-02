@@ -1,6 +1,7 @@
 export default class Component {
-	constructor(host) {
+	constructor(host, props = {}) {
 		this.host = host;
+		this.props = props;
 		this._render();
 	}
 
@@ -13,15 +14,25 @@ export default class Component {
 		} else {
 			content.map(item => {
 				if(typeof item === "string") {
-					return document.createElement('div').innerHTML = "item";
+					const htmlElement = document.createElement('div');
+					htmlElement.innerHTML = item;
+					return htmlElement
 				} else {
-					return item
+					if(item.tag === 'function'){
+						const container = document.createElement('div');
+						item.tag(container, item.props)
+						return container;
+					} else {
+						return item
+					}
 				}
-			}).forEach(htmlEl => {
-					this.host.append(htmlEl);
-				})
+			})
+			.forEach(htmlEl => {
+				this.host.appendChild(htmlEl);
+			})
 		}
 	}
+
 	render() {
 		return "EMPTY";
 	}

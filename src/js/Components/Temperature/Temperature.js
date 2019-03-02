@@ -1,11 +1,11 @@
 import Component from "../../framework/Component"
 
 export default class Temperature extends Component {
-	constructor(host) {
-		super(host);
+	constructor(host, props) {
+		super(host, props);
 	}
 	
 	render() {
-		return '7 deg CEL';
+		return this.props.temperature + 'deg' + this.props.unit;
 	}
 }
