@@ -7,7 +7,39 @@
 	<title>Document</title>
 </head>
 <body>
-	<main id="app"></main>
+	<main id="weather-app" class="weather-app">
+		<section id="weather-forecast" class="weather-forecast">
+			<ul class="weather-forecast__list">
+				<li class="weatehr-forecast__item">Sunday</li>
+				<li class="weatehr-forecast__item">Monday</li>
+				<li class="weatehr-forecast__item">Tuesday</li>
+				<li class="weatehr-forecast__item">Wednesday</li>
+				<li class="weatehr-forecast__item">Thursday</li>
+				<li class="weatehr-forecast__item">Friday</li>
+				<li class="weatehr-forecast__item">Saturday</li>
+			</ul>
+		</section>
+		<section id="current-weather" class="current-weather">
+			<div class="current-weather__info">
+				<p class="current-weather__temperature">30&deg;C</p>
+				<p class="current-weather__description">Sunny</p>
+				<div class="current-weather__aditional">
+					<p class="current-weather__wind">7mph</p>
+					<p class="current-weather__humidity">33%</p>
+					<p class="current-weather__pressure">0.99atm</p>
+				</div>
+				<div class="favourite-btn">
+					<button type="button">F</button>
+				</div>
+			</div>
+			<div class="current-weather__title">
+				<h1 class="current-weather__city">Kyiv</h1>
+				<p class="current-weather__time">07:36:43</p>
+				<h3 class="current-weather__country">Ukraine</h3>
+				<p class="current-weather__date">MARCH 17 2019</p>
+			</div>
+		</section>
+	</main>
 	<script src="./js/index.js"></script>
 </body>
 </html>
